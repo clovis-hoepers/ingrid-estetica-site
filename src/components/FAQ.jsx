@@ -6,6 +6,10 @@ const faqs = [
     a: 'O botox age nos músculos, relaxando-os para suavizar rugas dinâmicas. Já o bioestimulador estimula o próprio corpo a produzir colágeno, melhorando a firmeza e o volume da pele ao longo do tempo. Os dois são complementares e podem ser usados juntos.',
   },
   {
+    q: 'O que é o protocolo anti-olheiras e quem pode fazer?',
+    a: 'O protocolo anti-olheiras é um tratamento especializado para a região periorbital que combina preenchedores com ácido hialurônico e/ou bioestimuladores para reduzir olheiras fundas, bolsas e o aspecto cansado. É indicado para adultos a partir dos 25 anos, após avaliação individual com a Ingrid.',
+  },
+  {
     q: 'Com que idade posso começar os tratamentos?',
     a: 'Não existe uma idade mínima rígida. O botox preventivo, por exemplo, já é recomendado a partir dos 25–30 anos. O importante é uma avaliação individualizada para entender o que faz sentido para o seu momento. Mulheres entre 30 e 65 anos são as que mais se beneficiam dos protocolos anti-idade.',
   },
@@ -18,8 +22,12 @@ const faqs = [
     a: 'Em média, entre 4 e 6 meses. Com o tratamento contínuo, o intervalo entre as sessões tende a aumentar pois os músculos ficam mais relaxados naturalmente.',
   },
   {
+    q: 'Os produtos utilizados são certificados?',
+    a: 'Sim! Todos os produtos utilizados nos procedimentos são 100% certificados pela ANVISA (Agência Nacional de Vigilância Sanitária), garantindo segurança, eficácia e qualidade em cada tratamento.',
+  },
+  {
     q: 'Preciso me afastar do trabalho após os procedimentos?',
-    a: 'Geralmente não. A maioria dos procedimentos permite retorno imediato às atividades normais. Alguns podem apresentar leve vermidão ou inchaço por algumas horas, mas isso é passageiro.',
+    a: 'Geralmente não. A maioria dos procedimentos permite retorno imediato às atividades normais. Alguns podem apresentar leve vermelhidão ou inchaço por algumas horas, mas isso é passageiro.',
   },
 ]
 
@@ -43,18 +51,26 @@ export function FAQ() {
               key={i}
               className="rounded-2xl border overflow-hidden transition-all duration-200"
               style={{
-                borderColor: open === i ? '#9b87f5' : '#E5DEFF',
-                backgroundColor: open === i ? '#f5f3ff' : '#ffffff',
+                borderColor: open === i ? '#C9960C' : '#edd4a0',
+                backgroundColor: open === i ? '#fdf8ed' : '#ffffff',
               }}
             >
               <button
                 className="w-full text-left px-6 py-5 flex items-center justify-between gap-4"
                 onClick={() => setOpen(open === i ? null : i)}
               >
-                <span className="font-semibold text-brand-500 text-sm md:text-base">{q}</span>
+                <span
+                  className="font-semibold text-sm md:text-base"
+                  style={{ color: '#4a2e12' }}
+                >
+                  {q}
+                </span>
                 <svg
-                  className="w-5 h-5 flex-shrink-0 text-brand-300 transition-transform duration-200"
-                  style={{ transform: open === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                  className="w-5 h-5 flex-shrink-0 transition-transform duration-200"
+                  style={{
+                    color: '#C9960C',
+                    transform: open === i ? 'rotate(180deg)' : 'rotate(0deg)',
+                  }}
                   fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -63,7 +79,7 @@ export function FAQ() {
 
               {open === i && (
                 <div className="px-6 pb-5">
-                  <p className="text-brand-400 text-sm leading-relaxed">{a}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: '#6e4720' }}>{a}</p>
                 </div>
               )}
             </div>
