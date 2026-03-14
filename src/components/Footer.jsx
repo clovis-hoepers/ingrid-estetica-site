@@ -4,25 +4,27 @@ const MAPS_LINK = 'https://www.google.com/maps/place/Ingrid+Melo-+Bioestimulador
 
 export function Footer() {
   return (
-    <footer className="border-t border-brand-700 bg-brand-800">
+    <footer style={{ borderTop: '1px solid #4a2e12', backgroundColor: '#2d1c0a' }}>
       <div className="section-wrapper py-12 grid gap-8 md:grid-cols-4 items-start">
         {/* Marca */}
         <div className="md:col-span-1">
           <p className="font-playfair text-lg font-bold text-white mb-0.5">Ingrid Melo</p>
-          <p className="text-[10px] uppercase tracking-widest text-gold-400 mb-4">Gerenciamento de Pele</p>
-          <p className="text-sm text-brand-300 leading-relaxed mb-3">
+          <p className="text-[10px] uppercase tracking-widest mb-4" style={{ color: '#C9960C' }}>Gerenciamento de Pele</p>
+          <p className="text-sm leading-relaxed mb-3" style={{ color: '#e8ddd0' }}>
             Farmacêutica com foco em gerenciamento personalizado de pele:
             tratamentos clínicos e rotinas de skincare sob medida.
+            Produtos 100% certificados pela ANVISA.
           </p>
-          <p className="text-xs text-brand-400">{PROFISSIONAL_CRF}</p>
+          <p className="text-xs" style={{ color: '#b5813a' }}>{PROFISSIONAL_CRF}</p>
         </div>
 
         {/* Tratamentos */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-gold-400 mb-4">Tratamentos</p>
-          <ul className="space-y-2 text-sm text-brand-300">
+          <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: '#C9960C' }}>Tratamentos</p>
+          <ul className="space-y-2 text-sm" style={{ color: '#e8ddd0' }}>
             <li>Toxina botulínica (Botox)</li>
             <li>Bioestimulador de colágeno</li>
+            <li>Protocolo anti-olheiras</li>
             <li>Rotina de Skincare</li>
             <li>Limpeza de pele</li>
             <li>Peeling químico</li>
@@ -31,13 +33,20 @@ export function Footer() {
 
         {/* Localização */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-gold-400 mb-4">Studio</p>
-          <ul className="space-y-2 text-sm text-brand-300">
+          <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: '#C9960C' }}>Studio</p>
+          <ul className="space-y-2 text-sm" style={{ color: '#e8ddd0' }}>
             <li>Joinville · Santa Catarina</li>
             <li>Segunda a Sábado · com agendamento</li>
             <li>
-              <a href={MAPS_LINK} target="_blank" rel="noreferrer"
-                 className="hover:text-gold-300 transition-colors underline underline-offset-2">
+              <a
+                href={MAPS_LINK}
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors underline underline-offset-2"
+                style={{ color: '#e8ddd0' }}
+                onMouseEnter={e => e.target.style.color = '#e8c96a'}
+                onMouseLeave={e => e.target.style.color = '#e8ddd0'}
+              >
                 Ver no Google Maps
               </a>
             </li>
@@ -46,17 +55,31 @@ export function Footer() {
 
         {/* Contato */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-gold-400 mb-4">Contato</p>
+          <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: '#C9960C' }}>Contato</p>
           <ul className="space-y-3 text-sm">
             <li>
-              <a href={INSTAGRAM_PROFILE} target="_blank" rel="noreferrer"
-                 className="text-brand-300 hover:text-gold-300 transition-colors">
+              <a
+                href={INSTAGRAM_PROFILE}
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors"
+                style={{ color: '#e8ddd0' }}
+                onMouseEnter={e => e.target.style.color = '#e8c96a'}
+                onMouseLeave={e => e.target.style.color = '#e8ddd0'}
+              >
                 {INSTAGRAM_HANDLE}
               </a>
             </li>
             <li>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer"
-                 className="text-brand-300 hover:text-gold-300 transition-colors">
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors"
+                style={{ color: '#e8ddd0' }}
+                onMouseEnter={e => e.target.style.color = '#e8c96a'}
+                onMouseLeave={e => e.target.style.color = '#e8ddd0'}
+              >
                 +55 47 99224-5604
               </a>
             </li>
@@ -64,8 +87,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-brand-700">
-        <p className="section-wrapper py-4 text-xs text-brand-400 text-center">
+      <div style={{ borderTop: '1px solid #4a2e12' }}>
+        <p className="section-wrapper py-4 text-xs text-center" style={{ color: '#b5813a' }}>
           © {new Date().getFullYear()} Ingrid Melo — Gerenciamento de Pele · {PROFISSIONAL_CRF} · Joinville/SC
         </p>
       </div>
