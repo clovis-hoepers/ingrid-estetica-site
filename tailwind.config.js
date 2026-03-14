@@ -9,36 +9,39 @@ export default {
       },
       colors: {
         brand: {
-          50:  '#f0ecff',
-          100: '#ddd5f9',
-          200: '#baaff0',
-          300: '#9b87f5',
-          400: '#7E69AB',
-          500: '#4a3280',   // roxo escuro principal
-          600: '#3b2669',
-          700: '#2e1d54',
-          800: '#1e1238',
-          900: '#100a20',
+          50:  '#fdf8f0',
+          100: '#f7e8cc',
+          200: '#edd4a0',
+          300: '#d4a96a',   // warm amber mid
+          400: '#b5813a',   // burnt amber text
+          500: '#8B5E2C',   // burnt orange escuro principal
+          600: '#6e4720',
+          700: '#4a2e12',
+          800: '#2d1c0a',
+          900: '#170e03',
         },
         gold: {
-          100: '#fdf3e7',
-          200: '#f5e0c0',
-          300: '#e8c47a',
-          400: '#c9956c',   // rose-gold
-          500: '#b07840',
-          600: '#8a5e2c',
+          100: '#fdf8ed',
+          200: '#f7e8cc',
+          300: '#e8c96a',   // gold brilhante
+          400: '#C9960C',   // gold principal
+          500: '#a67c00',   // gold escuro
+          600: '#7d5d00',
         },
-        blush: {
-          50:  '#fff5f7',
-          100: '#FFDEE2',
-          200: '#fbb6ce',
-          300: '#f687b3',
+        copper: {
+          100: '#fef0e8',
+          200: '#f9d5bb',
+          300: '#e89c68',
+          400: '#CC6633',   // burnt orange
+          500: '#a84d20',
+          600: '#7c3412',
         },
         nude: {
           50:  '#fdfcfb',
-          100: '#faf7f4',
-          200: '#f5ede8',
-          300: '#ecddd5',
+          100: '#faf7f2',
+          200: '#f2ebe0',
+          300: '#e8ddd0',
+          400: '#c9b99a',
         },
       },
       keyframes: {
