@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { WHATSAPP_LINK, PROFISSIONAL_CRF } from '../constants'
+import { WHATSAPP_LINK } from '../constants'
 
 const navLinks = [
   { href: '#servicos',     label: 'Tratamentos' },
@@ -13,12 +13,18 @@ export function Header() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-brand-700/95 backdrop-blur border-b border-brand-600">
+    <header
+      className="sticky top-0 z-50 backdrop-blur border-b"
+      style={{
+        background: 'linear-gradient(135deg, #2d1c0a 0%, #4a2e12 100%)',
+        borderBottomColor: '#6e4720',
+      }}
+    >
       <div className="section-wrapper flex items-center justify-between h-16">
         {/* Logo */}
         <a href="#" className="flex flex-col leading-none">
           <span className="font-playfair text-lg font-bold text-white">Ingrid Melo</span>
-          <span className="text-[10px] uppercase tracking-widest text-gold-300">
+          <span className="text-[10px] uppercase tracking-widest" style={{ color: '#C9960C' }}>
             Gerenciamento de Pele
           </span>
         </a>
@@ -27,7 +33,11 @@ export function Header() {
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map(({ href, label }) => (
             <a key={href} href={href}
-               className="text-sm text-brand-200 hover:text-white transition-colors">
+               className="text-sm transition-colors"
+               style={{ color: '#e8ddd0' }}
+               onMouseEnter={e => e.target.style.color = '#e8c96a'}
+               onMouseLeave={e => e.target.style.color = '#e8ddd0'}
+            >
               {label}
             </a>
           ))}
@@ -35,7 +45,6 @@ export function Header() {
 
         {/* CTA desktop */}
         <div className="hidden md:flex items-center gap-4">
-          <span className="text-[10px] text-gold-300 tracking-wider">{PROFISSIONAL_CRF}</span>
           <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="btn-gold text-xs px-5 py-2">
             Agendar avaliação
           </a>
@@ -58,11 +67,17 @@ export function Header() {
 
       {/* Menu mobile expandido */}
       {open && (
-        <div className="md:hidden border-t border-brand-600 bg-brand-700 px-5 pb-5">
+        <div
+          className="md:hidden border-t px-5 pb-5"
+          style={{ borderTopColor: '#6e4720', backgroundColor: '#4a2e12' }}
+        >
           <nav className="flex flex-col gap-4 pt-4">
             {navLinks.map(({ href, label }) => (
               <a key={href} href={href} onClick={() => setOpen(false)}
-                 className="text-brand-200 hover:text-white transition-colors">{label}</a>
+                 className="transition-colors"
+                 style={{ color: '#e8ddd0' }}>
+                {label}
+              </a>
             ))}
             <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="btn-gold justify-center mt-2">
               Agendar avaliação
