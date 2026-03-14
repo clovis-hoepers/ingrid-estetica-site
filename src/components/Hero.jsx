@@ -9,7 +9,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden gradient-hero pt-16 pb-28">
-      {/* Orbes decorativos — Gold & Burnt Orange */}
+      {/* Orbes decorativos */}
       <div
         className="pointer-events-none absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full opacity-25"
         style={{ background: 'radial-gradient(circle, #C9960C 0%, transparent 70%)' }}
@@ -19,29 +19,32 @@ export function Hero() {
         style={{ background: 'radial-gradient(circle, #CC6633 0%, transparent 70%)' }}
       />
 
-      <div className="section-wrapper relative grid gap-14 md:grid-cols-[1.15fr,1fr] items-center">
+      <div className="section-wrapper relative grid gap-10 md:gap-14 md:grid-cols-[1.15fr,1fr] items-center">
         {/* Texto */}
         <div>
-          <span className="section-tag animate-fade-up">Joinville · SC</span>
+          <span className="section-tag animate-fade-up">Joinville · SC · Farmacêutica Especialista</span>
 
           <h1
-            className="font-playfair text-5xl md:text-[3.6rem] font-bold leading-[1.15] mb-5 animate-fade-up"
+            className="font-playfair text-4xl sm:text-5xl md:text-[3.6rem] font-bold leading-[1.15] mb-5 animate-fade-up"
             style={{ color: '#4a2e12', animationDelay: '0.1s' }}
           >
-            Sua pele mais jovem
-            <span className="block font-normal italic" style={{ color: '#CC6633' }}> começa com um</span>
-            <span className="block">protocolo único.</span>
+            Pele jovem, saudável
+            <span className="block font-normal italic" style={{ color: '#CC6633' }}> e autenticamente</span>
+            <span className="block">você.</span>
           </h1>
 
           <div className="divider-gold" />
 
           <p
-            className="text-lg leading-relaxed mb-6 max-w-md animate-fade-up"
+            className="text-base sm:text-lg leading-relaxed mb-6 max-w-md animate-fade-up"
             style={{ color: '#6e4720', animationDelay: '0.2s' }}
           >
-            Farmacêutica especializada em gerenciamento de pele: unimos
-            tratamentos clínicos como botox e bioestimulador com rotinas de
-            skincare personalizadas para resultados que duram.
+            Farmacêutica com pós-graduação em dermato-funcional, Ingrid Melo cria
+            protocolos exclusivos que combinam botox, bioestimulador e skincare
+            personalizado—para resultados naturais que duram.
+            <span className="block mt-2 font-medium" style={{ color: '#8B5E2C' }}>
+              Produtos 100% certificados pela ANVISA.
+            </span>
           </p>
 
           {/* Social proof */}
@@ -66,15 +69,19 @@ export function Hero() {
             <a href={ctaHref} target={ctaTarget} rel="noreferrer" className="btn-gold">
               {ENABLE_ONLINE_BOOKING
                 ? `Agendar consulta · R$ ${BOOKING_FEE_BRL}`
-                : 'Agendar avaliação de pele'}
+                : 'Agendar avaliação gratuita'}
             </a>
             <a href="#servicos" className="btn-outline">Ver tratamentos</a>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
-            {['Produtos certificados pela ANVISA', 'Ambiente esterilizado', 'Protocolo personalizado'].map((s) => (
+            {[
+              'Produtos certificados pela ANVISA',
+              'Ambiente esterilizado',
+              'Avaliação personalizada',
+            ].map((s) => (
               <span key={s} className="flex items-center gap-1.5 text-xs" style={{ color: '#6e4720' }}>
-                <svg className="w-4 h-4" style={{ color: '#C9960C' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 flex-shrink-0" style={{ color: '#C9960C' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                     d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
@@ -91,7 +98,10 @@ export function Hero() {
               className="absolute -inset-4 rounded-[2.5rem] opacity-40"
               style={{ background: 'linear-gradient(135deg, #8B5E2C, #C9960C, #CC6633)' }}
             />
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl w-72 md:w-80 aspect-[3/4]" style={{ backgroundColor: '#f7e8cc' }}>
+            <div
+              className="relative rounded-[2rem] overflow-hidden shadow-2xl w-64 sm:w-72 md:w-80 aspect-[3/4]"
+              style={{ backgroundColor: '#f7e8cc' }}
+            >
               <img
                 src={heroPic}
                 alt="Ingrid Melo — Farmacêutica Especialista em Gerenciamento de Pele em Joinville SC"
