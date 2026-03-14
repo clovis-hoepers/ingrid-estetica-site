@@ -5,7 +5,7 @@ const services = [
     emoji: '\u2728',
     title: 'Toxina botul\u00ednica',
     sub: 'Botox \u00b7 Anti-rugas',
-    desc: 'Suaviza rugas din\u00ecinicas preservando express\u00e3o natural. Ideal para testa, glabela e p\u00e9 de galinha. Resultado em at\u00e9 7 dias com produtos certificados pela ANVISA.',
+    desc: 'Suaviza rugas de express\u00e3o preservando naturalidade e movimento. Resultado vis\u00edvel em at\u00e9 7 dias, com dura\u00e7\u00e3o de 4 a 6 meses. Aplica\u00e7\u00e3o precisa por farmac\u00eautica especialista, com produtos ANVISA.',
     color: '#8B5E2C',
     bg: '#fdf8f0',
     border: '#f7e8cc',
@@ -14,8 +14,8 @@ const services = [
   {
     emoji: '\ud83e\udde0',
     title: 'Bioestimulador de col\u00e1geno',
-    sub: 'Sculptra \u00b7 Radiesse \u00b7 Ellan\u00e9e',
-    desc: 'Estimula a produ\u00e7\u00e3o natural de col\u00e1geno, restaurando volume e firmeza progressivamente. Resultados duram at\u00e9 2 anos. Produtos ANVISA certificados.',
+    sub: 'Sculptra \u00b7 Radiesse \u00b7 Ellan\u00e9',
+    desc: 'Reativa a produ\u00e7\u00e3o natural de col\u00e1geno, devolvendo firmeza, volume e vitalidade progressivamente. Resultados duram at\u00e9 2 anos. A maturidade da pele tratada com ci\u00eancia.',
     color: '#CC6633',
     bg: '#fef0e8',
     border: '#f9d5bb',
@@ -25,7 +25,7 @@ const services = [
     emoji: '\ud83d\udc41\ufe0f',
     title: 'Protocolo anti-olheiras',
     sub: 'Rejuvenescimento periorbital',
-    desc: 'Tratamento especializado para redu\u00e7\u00e3o de olheiras e bolsas, combinando preenchedores e bioestimuladores na regi\u00e3o periorbital. Resultados naturais e duradouros.',
+    desc: 'Tratamento especializado para a regi\u00e3o dos olhos: reduz olheiras profundas, bolsas e o aspecto cansado. Combina preenchedores e bioestimuladores para um olhar mais fresco e descansado.',
     color: '#C9960C',
     bg: '#fdf8ed',
     border: '#f7e8cc',
@@ -35,7 +35,7 @@ const services = [
     emoji: '\ud83c\udf3f',
     title: 'Rotina de Skincare',
     sub: 'Protocolo personalizado de pele',
-    desc: 'An\u00e1lise completa da sua pele com farmac\u00eautica especialista para montar rotina di\u00e1ria sob medida: ativos, ordem de aplica\u00e7\u00e3o e cuidados sazonais.',
+    desc: 'Sua pele tem necessidades \u00fanicas. A Ingrid analisa seu bioma cut\u00e2neo e monta uma rotina di\u00e1ria sob medida\u2014ativos certos, ordem correta, produtos ANVISA\u2014para resultados reais em casa.',
     color: '#b5813a',
     bg: '#fdf8f0',
     border: '#edd4a0',
@@ -45,7 +45,7 @@ const services = [
     emoji: '\ud83e\uddd6',
     title: 'Limpeza de pele',
     sub: 'Protocolo profissional',
-    desc: 'Remo\u00e7\u00e3o profunda de impurezas e c\u00e9lulas mortas com hidrata\u00e7\u00e3o intensiva. Pele visivelmente renovada logo na primeira sess\u00e3o.',
+    desc: 'Extrac\u00e7\u00e3o profunda, esfolia\u00e7\u00e3o e hidrata\u00e7\u00e3o intensiva em protocolo profissional. Pele visivelmente renovada, poros destampados e luminosidade restaurada logo na primeira sess\u00e3o.',
     color: '#8B5E2C',
     bg: '#faf7f2',
     border: '#e8ddd0',
@@ -55,7 +55,7 @@ const services = [
     emoji: '\ud83c\udf31',
     title: 'Peeling qu\u00edmico',
     sub: 'Renova\u00e7\u00e3o celular',
-    desc: 'Esfolia\u00e7\u00e3o controlada para uniformizar tom, atenuar manchas, linhas finas e marcas de acne. Progressivo e seguro com ativos ANVISA aprovados.',
+    desc: 'Esfolia\u00e7\u00e3o controlada com \u00e1cidos certificados pela ANVISA para uniformizar o tom, apagar manchas, atenuar linhas finas e marcas de acne. Progressivo, seguro e com resultado comprovado.',
     color: '#CC6633',
     bg: '#fef0e8',
     border: '#f9d5bb',
@@ -71,13 +71,13 @@ export function Services() {
           <span className="section-tag">Tratamentos</span>
           <h2 className="section-title">Gerenciamento completo da sua pele</h2>
           <p className="section-sub mx-auto">
-            Unimos est\u00e9tica avan\u00e7ada e skincare para criar um protocolo \u00fanico\u2014
-            do tratamento cl\u00ednico \u00e0 rotina di\u00e1ria em casa.
-            Todos os produtos utilizados s\u00e3o certificados pela ANVISA.
+            Cada protocolo é criado individualmente pela Ingrid\u2014unindo ci\u00eancia
+            derm\u00e1tica, est\u00e9tica avan\u00e7ada e skincare personalizado. Todos os produtos
+            utilizados s\u00e3o 100% certificados pela ANVISA.
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
             <div
               key={s.title}
@@ -116,7 +116,7 @@ export function Services() {
         </div>
 
         <div
-          className="mt-12 rounded-2xl p-8 text-center border"
+          className="mt-12 rounded-2xl p-6 sm:p-8 text-center border"
           style={{
             background: 'linear-gradient(135deg, #2d1c0a 0%, #4a2e12 100%)',
             borderColor: '#6e4720',
@@ -126,9 +126,9 @@ export function Services() {
             N\u00e3o sabe por onde come\u00e7ar?
           </p>
           <p className="text-sm mb-6 max-w-md mx-auto" style={{ color: '#e8ddd0' }}>
-            A Ingrid faz uma avalia\u00e7\u00e3o completa da sua pele e monta o protocolo
-            ideal\u2014unindo tratamentos cl\u00ednicos e sua rotina direta de skincare.
-            Todos os produtos s\u00e3o 100% certificados pela ANVISA.
+            A Ingrid realiza uma avalia\u00e7\u00e3o completa e gratuita da sua pele e
+            monta o protocolo ideal\u2014unindo tratamentos cl\u00ednicos e rotina de
+            skincare diária. Sua transforma\u00e7\u00e3o come\u00e7a com uma conversa.
           </p>
           <a href="#agendamento" className="btn-gold">
             Quero minha avalia\u00e7\u00e3o personalizada
