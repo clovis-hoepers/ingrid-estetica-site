@@ -3,54 +3,40 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  /* Usando valores diretos aqui — tokens custom do Tailwind nao funcionam dentro de @layer base */
+  html { scroll-behavior: smooth; }
   body {
     font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
-    background-color: #fdfcfb; /* cream-50 */
-    color: #2d2252;            /* brand-800 */
+    background-color: #fdfcfb;
+    color: #2d2252;
   }
 }
 
 @layer components {
-  /* Botoes */
-  .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-full bg-brand-300 px-7 py-3 text-sm font-medium text-white shadow-md shadow-brand-200 hover:bg-brand-400 transition-all duration-200;
-  }
-  .btn-outline {
-    @apply inline-flex items-center gap-2 rounded-full border border-brand-300 px-7 py-3 text-sm font-medium text-brand-400 hover:bg-brand-100 transition-all duration-200;
-  }
-  .btn-whatsapp {
-    @apply inline-flex items-center gap-2 rounded-full bg-[#25D366] px-7 py-3 text-sm font-medium text-white shadow-md hover:bg-[#1ebe5d] transition-all duration-200;
-  }
+  /* ── Layout ─────────────────────────────────────── */
+  .section-wrapper { @apply max-w-6xl mx-auto px-5; }
 
-  /* Secoes */
-  .section-wrapper {
-    @apply max-w-6xl mx-auto px-5;
-  }
-  .section-tag {
-    @apply inline-block text-xs font-medium uppercase tracking-[0.2em] text-brand-300 bg-brand-100 px-3 py-1 rounded-full mb-4;
-  }
-  .section-title {
-    @apply font-playfair text-3xl md:text-4xl font-bold text-brand-500 mb-3 leading-snug;
-  }
-  .section-subtitle {
-    @apply text-brand-400 mb-10 max-w-xl leading-relaxed;
-  }
+  /* ── Tipografia ─────────────────────────────────── */
+  .section-tag   { @apply inline-block text-xs font-medium uppercase tracking-[0.2em] text-brand-300 bg-brand-50 border border-brand-100 px-3 py-1 rounded-full mb-4; }
+  .section-title { @apply font-playfair text-3xl md:text-4xl font-bold text-brand-500 mb-3 leading-snug; }
+  .section-sub   { @apply text-brand-400 mb-10 max-w-xl leading-relaxed; }
 
-  /* Cards */
-  .card {
-    @apply rounded-2xl bg-white border border-brand-100 p-6 shadow-sm;
-  }
-  .card-hover {
-    @apply rounded-2xl bg-white border border-brand-100 p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200;
-  }
+  /* ── Botões ──────────────────────────────────────── */
+  .btn-primary  { @apply inline-flex items-center gap-2 rounded-full bg-brand-300 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-brand-200/60 hover:bg-brand-400 active:scale-95 transition-all duration-200; }
+  .btn-outline  { @apply inline-flex items-center gap-2 rounded-full border-2 border-brand-300 px-7 py-3 text-sm font-semibold text-brand-400 hover:bg-brand-50 active:scale-95 transition-all duration-200; }
+  .btn-gold     { @apply inline-flex items-center gap-2 rounded-full bg-[#c9956c] px-7 py-3 text-sm font-semibold text-white shadow-md hover:bg-[#b8845b] active:scale-95 transition-all duration-200; }
+  .btn-whatsapp { @apply inline-flex items-center gap-2 rounded-full bg-[#25D366] px-7 py-3 text-sm font-semibold text-white shadow-md hover:bg-[#1ebe5d] active:scale-95 transition-all duration-200; }
 
-  /* Divisor decorativo */
-  .divider-rose {
-    @apply w-12 h-1 rounded-full bg-blush-300 mb-6;
-  }
+  /* ── Cards ───────────────────────────────────────── */
+  .card       { @apply rounded-2xl bg-white border border-brand-100 p-6 shadow-sm; }
+  .card-hover { @apply rounded-2xl bg-white border border-brand-100 p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300; }
+
+  /* ── Decorativos ─────────────────────────────────── */
+  .divider-gold { @apply w-10 h-0.5 rounded-full mb-6; background: linear-gradient(90deg, #c9956c, #e8c4a0); }
+  .divider-rose { @apply w-10 h-0.5 rounded-full bg-blush-300 mb-6; }
+
+  /* ── Gradientes ──────────────────────────────────── */
+  .gradient-hero  { background: linear-gradient(135deg, #f5f3ff 0%, #fdfcfb 50%, #fff5f7 100%); }
+  .gradient-brand { background: linear-gradient(135deg, #6E59A5 0%, #9b87f5 100%); }
+  .gradient-gold  { background: linear-gradient(135deg, #c9956c 0%, #e8c4a0 100%); }
 }

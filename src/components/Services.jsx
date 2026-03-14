@@ -2,36 +2,44 @@ import { WHATSAPP_LINK } from '../constants'
 
 const services = [
   {
-    icon: '✨',
+    emoji: '✨',
     title: 'Toxina botulínica',
-    subtitle: 'Botox',
-    description:
-      'Suaviza rugas dinâmicas preservando a expressão natural. Resultado imediato e durarouro, ideal para testa, glabela e pé de galinha.',
-    highlight: 'Mais procurado',
+    sub: 'Botox',
+    desc: 'Suaviza rugas dinâmicas preservando expressão natural. Ideal para testa, glabela e pé de galinha.',
+    highlight: true,
+    badge: 'Mais procurado',
+    color: '#6E59A5',
+    bg: '#f5f3ff',
   },
   {
-    icon: '🧠',
+    emoji: '🧠',
     title: 'Bioestimulador de colágeno',
-    subtitle: 'Sculptra · Radiesse · Ellansé',
-    description:
-      'Estimula a produção natural de colágeno, restaurando o volume facial e melhorando a firmeza da pele progressivamente.',
-    highlight: null,
+    sub: 'Sculptra · Radiesse · Ellansé',
+    desc: 'Estimula produção natural de colágeno, restaurando volume e firmeza da pele progressivamente.',
+    highlight: false,
+    badge: null,
+    color: '#c9956c',
+    bg: '#fdf6f0',
   },
   {
-    icon: '🧖',
+    emoji: '🧖',
     title: 'Limpeza de pele',
-    subtitle: 'Protocolo profissional',
-    description:
-      'Remoção profunda de impurezas, cravos e células mortas com hidratação intensiva para uma pele visivelmente renovada.',
-    highlight: null,
+    sub: 'Protocolo profissional',
+    desc: 'Remoção profunda de impurezas e células mortas com hidratação intensiva. Pele visivelmente renovada.',
+    highlight: false,
+    badge: null,
+    color: '#f687b3',
+    bg: '#fff5f7',
   },
   {
-    icon: '🌱',
+    emoji: '🌱',
     title: 'Peeling químico',
-    subtitle: 'Renovação celular',
-    description:
-      'Esfoliação controlada que uniformiza o tom da pele, atenua manchas, acne e linhas finas com resultados progressivos e seguros.',
-    highlight: null,
+    sub: 'Renovação celular',
+    desc: 'Esfoliação controlada para uniformizar tom, atenuar manchas e linhas finas com resultados progressivos.',
+    highlight: false,
+    badge: null,
+    color: '#7E69AB',
+    bg: '#f5f3ff',
   },
 ]
 
@@ -42,31 +50,51 @@ export function Services() {
         <div className="text-center mb-14">
           <span className="section-tag">O que oferecemos</span>
           <h2 className="section-title">Tratamentos especializados</h2>
-          <p className="section-subtitle mx-auto">
-            Cada protocolo é pensado individualmente para respeitar sua anatomia
-            e potencializar sua beleza natural.
+          <p className="section-sub mx-auto">
+            Cada protocolo é pensado individualmente para respeitar sua
+            anatomia e potencializar sua beleza natural.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2">
           {services.map((s) => (
-            <div key={s.title} className="card-hover relative">
-              {s.highlight && (
-                <span className="absolute top-4 right-4 text-xs font-medium bg-blush-100 text-blush-400 px-3 py-1 rounded-full">
-                  {s.highlight}
+            <div
+              key={s.title}
+              className="relative rounded-2xl border p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              style={{ backgroundColor: s.bg, borderColor: s.color + '22' }}
+            >
+              {s.badge && (
+                <span
+                  className="absolute top-4 right-4 text-xs font-semibold px-3 py-1 rounded-full text-white"
+                  style={{ backgroundColor: s.color }}
+                >
+                  {s.badge}
                 </span>
               )}
-              <div className="text-3xl mb-4">{s.icon}</div>
-              <p className="text-xs uppercase tracking-widest text-brand-300 font-medium mb-1">{s.subtitle}</p>
+              <div className="text-3xl mb-3">{s.emoji}</div>
+              <p className="text-xs uppercase tracking-widest font-medium mb-1" style={{ color: s.color }}>
+                {s.sub}
+              </p>
               <h3 className="font-playfair text-xl font-bold text-brand-500 mb-3">{s.title}</h3>
-              <p className="text-brand-400 text-sm leading-relaxed">{s.description}</p>
+              <p className="text-brand-400 text-sm leading-relaxed">{s.desc}</p>
+
+              {/* Linha decorativa */}
+              <div className="mt-5 h-0.5 w-8 rounded-full" style={{ backgroundColor: s.color + '88' }} />
             </div>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="btn-primary">
-            Quero saber qual tratamento é para mim
+        <div className="mt-14 rounded-2xl p-8 text-center"
+             style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #fff5f7 100%)', border: '1px solid #E5DEFF' }}>
+          <p className="font-playfair text-xl font-bold text-brand-500 mb-2">
+            Não sabe qual tratamento é ideal para você?
+          </p>
+          <p className="text-brand-400 text-sm mb-6 max-w-md mx-auto">
+            A Ingrid faz uma avaliação personalizada gratuita para indicar o
+            protocolo mais adequado para o seu rosto e objetivos.
+          </p>
+          <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="btn-gold">
+            Quero minha avaliação gratuita
           </a>
         </div>
       </div>
