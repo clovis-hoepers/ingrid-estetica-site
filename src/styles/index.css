@@ -8,7 +8,7 @@
     font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     background-color: #fdfcfb;
-    color: #1e1238;
+    color: #2d1c0a;
   }
 }
 
@@ -16,57 +16,95 @@
   /* Layout */
   .section-wrapper { @apply max-w-6xl mx-auto px-5; }
 
-  /* Tipografia — section-tag usa valores hex diretos para evitar erro postcss com tokens custom */
+  /* Tipografia */
   .section-tag {
     display: inline-block;
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: #c9956c;             /* gold-400 */
-    background-color: #fdf3e7;  /* gold-100 */
-    border: 1px solid #f5e0c0;  /* gold-200 */
+    color: #C9960C;             /* gold-400 */
+    background-color: #fdf8ed;  /* gold-100 */
+    border: 1px solid #f7e8cc;  /* gold-200 */
     padding: 0.2rem 0.75rem;
     border-radius: 9999px;
     margin-bottom: 1rem;
   }
-  .section-title { @apply font-playfair text-3xl md:text-4xl font-bold text-brand-500 mb-3 leading-snug; }
-  .section-sub   { @apply text-brand-400 mb-10 max-w-xl leading-relaxed; }
+  .section-title  { @apply font-playfair text-3xl md:text-4xl font-bold text-brand-500 mb-3 leading-snug; }
+  .section-sub    { @apply text-brand-400 mb-10 max-w-xl leading-relaxed; }
 
   /* Botões */
-  .btn-primary  { @apply inline-flex items-center gap-2 rounded-full bg-brand-500 px-7 py-3 text-sm font-semibold text-white shadow-md hover:bg-brand-600 active:scale-95 transition-all duration-200; }
-  .btn-outline  { @apply inline-flex items-center gap-2 rounded-full border-2 border-brand-500 px-7 py-3 text-sm font-semibold text-brand-500 hover:bg-brand-50 active:scale-95 transition-all duration-200; }
-  .btn-gold     {
+  .btn-primary  {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    border-radius: 9999px;
+    background-color: #8B5E2C;
+    padding: 0.75rem 1.75rem;
+    font-size: 0.875rem; font-weight: 700;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(139,94,44,0.30);
+    transition: all 0.2s;
+  }
+  .btn-primary:hover  { background-color: #6e4720; }
+  .btn-primary:active { transform: scale(0.97); }
+
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    border-radius: 9999px;
+    border: 2px solid #8B5E2C;
+    padding: 0.75rem 1.75rem;
+    font-size: 0.875rem; font-weight: 600;
+    color: #8B5E2C;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover  { background-color: #fdf8ed; }
+  .btn-outline:active { transform: scale(0.97); }
+
+  .btn-gold {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     border-radius: 9999px;
-    background-color: #c9956c;  /* gold-400 */
+    background: linear-gradient(135deg, #C9960C 0%, #CC6633 100%);
     padding: 0.75rem 1.75rem;
     font-size: 0.875rem;
     font-weight: 700;
     color: #ffffff;
-    box-shadow: 0 4px 14px rgba(201,149,108,0.35);
+    box-shadow: 0 4px 18px rgba(201,150,12,0.40);
     transition: all 0.2s;
   }
-  .btn-gold:hover { background-color: #b07840; }
+  .btn-gold:hover  { background: linear-gradient(135deg, #a67c00 0%, #a84d20 100%); box-shadow: 0 6px 22px rgba(201,150,12,0.50); }
   .btn-gold:active { transform: scale(0.97); }
+
   .btn-whatsapp { @apply inline-flex items-center gap-2 rounded-full bg-[#25D366] px-7 py-3 text-sm font-semibold text-white shadow-md hover:bg-[#1ebe5d] active:scale-95 transition-all duration-200; }
 
   /* Cards */
-  .card       { @apply rounded-2xl bg-white border border-brand-100 p-6 shadow-sm; }
-  .card-hover { @apply rounded-2xl bg-white border border-brand-100 p-6 shadow-sm hover:shadow-xl hover:shadow-brand-800/10 hover:-translate-y-1 transition-all duration-300; }
+  .card       { @apply rounded-2xl bg-white border border-nude-300 p-6 shadow-sm; }
+  .card-hover { @apply rounded-2xl bg-white border border-nude-300 p-6 shadow-sm hover:shadow-xl hover:shadow-brand-500/10 hover:-translate-y-1 transition-all duration-300; }
 
-  /* Decorativos — valores hex diretos */
+  /* Decorativos */
   .divider-gold {
-    width: 2.5rem; height: 2px; border-radius: 9999px; margin-bottom: 1.5rem;
-    background: linear-gradient(90deg, #c9956c, #e8c47a);
+    width: 2.5rem; height: 3px; border-radius: 9999px; margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #C9960C, #CC6633);
   }
-  .divider-rose { @apply w-10 h-0.5 rounded-full bg-blush-300 mb-6; }
+  .divider-copper {
+    width: 2.5rem; height: 2px; border-radius: 9999px; margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #CC6633, #e8c96a);
+  }
 
-  /* Gradientes */
-  .gradient-hero  { background: linear-gradient(135deg, #f0ecff 0%, #fdfcfb 55%, #fff5f7 100%); }
-  .gradient-dark  { background: linear-gradient(135deg, #2e1d54 0%, #4a3280 100%); }
-  .gradient-gold  { background: linear-gradient(135deg, #c9956c 0%, #e8c47a 100%); }
-  .gradient-brand { background: linear-gradient(135deg, #4a3280 0%, #9b87f5 100%); }
+  /* Gradientes — nova paleta madura Gold & Burnt Orange */
+  .gradient-hero  {
+    background: linear-gradient(135deg, #fdf8f0 0%, #fdfcfb 55%, #fef0e8 100%);
+  }
+  .gradient-dark  {
+    background: linear-gradient(135deg, #2d1c0a 0%, #4a2e12 60%, #6e4720 100%);
+  }
+  .gradient-gold  {
+    background: linear-gradient(135deg, #C9960C 0%, #e8c96a 50%, #CC6633 100%);
+  }
+  .gradient-warm  {
+    background: linear-gradient(135deg, #8B5E2C 0%, #CC6633 100%);
+  }
+  .gradient-subtle {
+    background: linear-gradient(135deg, #fdf8ed 0%, #fef0e8 100%);
+  }
 }
