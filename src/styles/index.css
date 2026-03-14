@@ -6,8 +6,12 @@
   html {
     scroll-behavior: smooth;
   }
+  /* Usando valores diretos aqui — tokens custom do Tailwind nao funcionam dentro de @layer base */
   body {
-    @apply font-sans antialiased bg-cream-50 text-brand-800;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #fdfcfb; /* cream-50 */
+    color: #2d2252;            /* brand-800 */
   }
 }
 
@@ -42,7 +46,7 @@
     @apply rounded-2xl bg-white border border-brand-100 p-6 shadow-sm;
   }
   .card-hover {
-    @apply card hover:shadow-md hover:-translate-y-1 transition-all duration-200;
+    @apply rounded-2xl bg-white border border-brand-100 p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200;
   }
 
   /* Divisor decorativo */
