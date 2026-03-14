@@ -18,7 +18,7 @@ export const INSTAGRAM_HANDLE  = '@farmaingridmelo'
 // true  → exibe formulário com pagamento SumUp e botão do Google Agenda
 // false → oculta o formulário e direciona tudo para WhatsApp
 // =============================================================================
-export const ENABLE_ONLINE_BOOKING = false
+export const ENABLE_ONLINE_BOOKING = true
 
 // --- Taxa de agendamento (fácil ajuste) --------------------------------------
 // Valor cobrado para reservar a consulta; é 100% abatido no procedimento.
@@ -29,12 +29,12 @@ export const BOOKING_FEE_LABEL = `Taxa de reserva — R$ ${100},00`
 // Só usado quando ENABLE_ONLINE_BOOKING = true
 // Gere o Checkout ID em: https://developer.sumup.com/online-payments
 export const SUMUP_CHECKOUT_ID = 'SEU_CHECKOUT_ID_AQUI'
+export const SUMUP_MERCHANT_CODE = 'SEU_MERCHANT_CODE_AQUI'
 
 // --- Google Agenda -----------------------------------------------------------
-// Só usado quando ENABLE_ONLINE_BOOKING = true
-// Gere em: calendar.google.com → Configurações → “Criar agendamento de compromissos”
+// Agendamento via Google Calendar (link do caléndário público da Ingrid)
 export const GOOGLE_CALENDAR_APPOINTMENT_URL =
-  'https://calendar.google.com/calendar/appointments/schedules/AcZssZ-SUBSTITUA-PELO-SEU-LINK'
+  'https://calendar.google.com/calendar/u/1?cid=N2Y4ZDc0MmZmOGQ5YzE3ZTY3ZjExZWI2NTQyM2VlOWIwYjcxZWFhNWUwOTdkOGM5NGU1YjY3YmNiNzJlYTM3MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t'
 
 // --- Portfólio — Posts por procedimento --------------------------------------
 export const PORTFOLIO_BY_PROCEDURE = {
