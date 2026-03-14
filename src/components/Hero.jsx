@@ -1,21 +1,14 @@
 import { WHATSAPP_LINK } from '../constants'
 
-// -----------------------------------------------------------------------
-// FOTO DA PROFISSIONAL
-// Para usar a foto real da Ingrid:
-//   1. Salve o arquivo em /public/images/ingrid.jpg
-//   2. Troque HERO_PHOTO abaixo para '/images/ingrid.jpg'
-//
-// Fonte da foto: https://www.instagram.com/p/DR0dJHBj5n6/
-//   -> Baixe manualmente pelo Instagram (salvar imagem) e coloque em /public/images/
-// -----------------------------------------------------------------------
-const HERO_PHOTO = '/images/ingrid.jpg'
+// Foto hospedada no Google Drive
+// Para trocar: atualize HERO_PHOTO com o novo ID do arquivo do Drive
+const DRIVE_FILE_ID = '1FJ2cfJcXOvKCBWONAa3TQVdPHcc4O9SD'
+const HERO_PHOTO = `https://drive.google.com/uc?export=view&id=${DRIVE_FILE_ID}`
 const HERO_PHOTO_FALLBACK = 'https://placehold.co/480x640/E5DEFF/7E69AB?text=Foto+Ingrid'
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#f5f3ff] via-[#fdfcfb] to-white pt-16 pb-24">
-      {/* Ornamentos de fundo */}
       <div className="pointer-events-none absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-[#E5DEFF]/40 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 -left-20 w-[300px] h-[300px] rounded-full bg-[#FFDEE2]/50 blur-2xl" />
 
@@ -42,16 +35,13 @@ export function Hero() {
               </svg>
               Agendar pelo WhatsApp
             </a>
-            <a href="#portfolio" className="btn-outline">
-              Ver portfólio
-            </a>
+            <a href="#portfolio" className="btn-outline">Ver portfólio</a>
           </div>
         </div>
 
         {/* Foto da profissional */}
         <div className="flex justify-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
           <div className="relative">
-            {/* Moldura decorativa */}
             <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-[#D6BCFA] to-[#FFDEE2] opacity-40 blur-sm" />
             <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-brand-200/50 aspect-[3/4] w-72 md:w-80 bg-brand-100">
               <img
@@ -59,9 +49,9 @@ export function Hero() {
                 alt="Ingrid Melo — Farmacêutica Esteta"
                 className="w-full h-full object-cover object-top"
                 onError={(e) => { e.currentTarget.src = HERO_PHOTO_FALLBACK }}
+                referrerPolicy="no-referrer"
               />
             </div>
-            {/* Badge flutuante */}
             <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg px-4 py-3 border border-brand-100">
               <p className="text-xs text-brand-300 font-medium uppercase tracking-wider">Farmacêutica Esteta</p>
               <p className="font-playfair text-sm font-bold text-brand-500">CRF · Joinville/SC</p>

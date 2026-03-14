@@ -1,11 +1,14 @@
 import { WHATSAPP_LINK, INSTAGRAM_PROFILE, INSTAGRAM_HANDLE } from '../constants'
 
+const MAPS_LINK =
+  'https://www.google.com/maps/place/Ingrid+Melo-+Bioestimulador+de+col%C3%A1geno+l+Botox+l+Limpeza+de+pele+l+Peeling+l/@-26.3122,-48.8455,17z'
+
 export function Footer() {
   return (
     <footer className="border-t border-brand-100 bg-white">
-      <div className="section-wrapper py-10 grid gap-8 md:grid-cols-3 items-start">
+      <div className="section-wrapper py-10 grid gap-8 md:grid-cols-4 items-start">
         {/* Marca */}
-        <div>
+        <div className="md:col-span-1">
           <p className="font-playfair text-lg font-bold text-brand-500 mb-1">Ingrid Melo</p>
           <p className="text-xs uppercase tracking-widest text-brand-300 mb-4">Estética Facial Avançada</p>
           <p className="text-sm text-brand-400 leading-relaxed">
@@ -25,23 +28,40 @@ export function Footer() {
           </ul>
         </div>
 
+        {/* Localização */}
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-300 mb-4">Localização</p>
+          <ul className="space-y-2 text-sm text-brand-400">
+            <li>Joinville · Santa Catarina</li>
+            <li>
+              <a href={MAPS_LINK} target="_blank" rel="noreferrer"
+                className="hover:text-brand-500 transition-colors underline underline-offset-2">
+                Ver no Google Maps
+              </a>
+            </li>
+          </ul>
+        </div>
+
         {/* Contato */}
         <div>
           <p className="text-xs font-semibold uppercase tracking-widest text-brand-300 mb-4">Contato</p>
           <ul className="space-y-3 text-sm">
             <li>
-              <a href={INSTAGRAM_PROFILE} target="_blank" rel="noreferrer" className="text-brand-400 hover:text-brand-500 transition-colors">
+              <a href={INSTAGRAM_PROFILE} target="_blank" rel="noreferrer"
+                className="text-brand-400 hover:text-brand-500 transition-colors">
                 {INSTAGRAM_HANDLE}
               </a>
             </li>
             <li>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="text-brand-400 hover:text-brand-500 transition-colors">
+              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer"
+                className="text-brand-400 hover:text-brand-500 transition-colors">
                 +55 47 99224-5604
               </a>
             </li>
           </ul>
         </div>
       </div>
+
       <div className="border-t border-brand-100">
         <p className="section-wrapper py-4 text-xs text-brand-300 text-center">
           © {new Date().getFullYear()} Ingrid Melo — Estética Facial Avançada. Todos os direitos reservados.
