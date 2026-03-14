@@ -296,7 +296,7 @@ function OnlineBookingForm() {
               </div>
               {error && <p className="text-red-400 text-xs">{error}</p>}
               <button type="submit" className="btn-gold w-full justify-center py-3.5">
-                {isFree ? 'Confirmar avaliação gratuita' : `Prosseguir para pagamento · R$ ${BOOKING_FEE_BRL}`}
+                {isFree ? 'Confirmar agendamento' : `Prosseguir para pagamento · R$ ${BOOKING_FEE_BRL}`}
               </button>
             </form>
           )}
