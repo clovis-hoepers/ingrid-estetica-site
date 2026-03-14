@@ -7,16 +7,16 @@ export function Location() {
   return (
     <section id="localizacao" className="py-24 bg-white">
       <div className="section-wrapper">
-        <div className="grid gap-12 md:grid-cols-[1fr,1.2fr] items-center">
+        <div className="grid gap-10 sm:gap-12 md:grid-cols-[1fr,1.2fr] items-center">
           {/* Texto */}
           <div>
             <span className="section-tag">Onde estamos</span>
             <h2 className="section-title">Studio em Joinville/SC</h2>
             <div className="divider-gold" />
-            <p className="leading-relaxed mb-6" style={{ color: '#6e4720' }}>
-              Atendimentos em um ambiente acolhedor, reservado e pensado para o
-              seu conforto. Um espaço exclusivo onde cada detalhe foi pensado
-              para proporcionar uma experiência única de bem-estar e transformação.
+            <p className="leading-relaxed mb-6 text-sm sm:text-base" style={{ color: '#6e4720' }}>
+              Um ambiente acolhedor, reservado e projetado para o seu conforto e
+              privacidade. Cada detalhe foi pensado para que você se sinta segura
+              e cuidada desde o momento em que entra pela porta.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -30,7 +30,7 @@ export function Location() {
                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   ),
-                  title: 'Endereço',
+                  title: 'Localização',
                   desc: 'Joinville · Santa Catarina · Brasil',
                 },
                 {
@@ -69,11 +69,11 @@ export function Location() {
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-3">
-              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="btn-gold">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="btn-gold justify-center sm:justify-start">
                 Agendar pelo WhatsApp
               </a>
-              <a href={MAPS_LINK} target="_blank" rel="noreferrer" className="btn-outline">
+              <a href={MAPS_LINK} target="_blank" rel="noreferrer" className="btn-outline justify-center sm:justify-start">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                     d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
@@ -85,15 +85,15 @@ export function Location() {
 
           {/* Mapa */}
           <div
-            className="rounded-2xl overflow-hidden shadow-lg aspect-[4/3]"
-            style={{ border: '1px solid #edd4a0' }}
+            className="rounded-2xl overflow-hidden shadow-lg w-full"
+            style={{ border: '1px solid #edd4a0', aspectRatio: '4/3' }}
           >
             <iframe
               title="Localização do Studio Ingrid Melo"
               src="https://maps.google.com/maps?q=Ingrid+Melo+Bioestimulador+Botox+Joinville+SC&output=embed&hl=pt-BR"
               width="100%"
               height="100%"
-              style={{ border: 0 }}
+              style={{ border: 0, display: 'block' }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
