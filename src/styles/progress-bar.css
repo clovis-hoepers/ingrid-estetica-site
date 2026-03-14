@@ -1,0 +1,5 @@
+/* Barra de progresso do carrossel auto-advance */
+@keyframes progress-bar {
+  from { width: 0%; }
+  to   { width: 100%; }
+}

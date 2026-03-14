@@ -5,6 +5,7 @@ import { Services }         from './components/Services'
 import { InstagramGallery } from './components/InstagramGallery'
 import { Testimonial }      from './components/Testimonial'
 import { FAQ }              from './components/FAQ'
+import { BookingForm }      from './components/BookingForm'
 import { Location }         from './components/Location'
 import { CallToAction }     from './components/CallToAction'
 import { Footer }           from './components/Footer'
@@ -22,6 +23,7 @@ function App() {
         <InstagramGallery />
         <Testimonial />
         <FAQ />
+        <BookingForm />
         <Location />
         <CallToAction />
       </main>
