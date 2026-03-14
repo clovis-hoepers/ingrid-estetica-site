@@ -1,46 +1,73 @@
+import { WHATSAPP_LINK } from '../constants'
+
 const services = [
   {
-    title: 'Toxina botulínica (Botox)',
+    icon: '✨',
+    title: 'Toxina botulínica',
+    subtitle: 'Botox',
     description:
-      'Suavização de rugas dinâmicas da testa, glabela e região dos olhos, preservando a expressão natural do rosto.',
+      'Suaviza rugas dinâmicas preservando a expressão natural. Resultado imediato e durarouro, ideal para testa, glabela e pé de galinha.',
+    highlight: 'Mais procurado',
   },
   {
+    icon: '🧠',
     title: 'Bioestimulador de colágeno',
+    subtitle: 'Sculptra · Radiesse · Ellansé',
     description:
-      'Tratamento que estimula a produção de colágeno, melhorando firmeza, contorno facial e qualidade da pele ao longo do tempo.',
+      'Estimula a produção natural de colágeno, restaurando o volume facial e melhorando a firmeza da pele progressivamente.',
+    highlight: null,
   },
   {
+    icon: '🧖',
     title: 'Limpeza de pele',
+    subtitle: 'Protocolo profissional',
     description:
-      'Protocolo completo para remoção de impurezas, cravos e miliuns, com hidratação e recuperação da barreira cutânea.',
+      'Remoção profunda de impurezas, cravos e células mortas com hidratação intensiva para uma pele visivelmente renovada.',
+    highlight: null,
   },
   {
+    icon: '🌱',
     title: 'Peeling químico',
+    subtitle: 'Renovação celular',
     description:
-      'Renovação celular controlada para uniformizar o tom, suavizar manchas e linhas de expressão.',
+      'Esfoliação controlada que uniformiza o tom da pele, atenua manchas, acne e linhas finas com resultados progressivos e seguros.',
+    highlight: null,
   },
 ]
 
 export function Services() {
   return (
-    <section id="servicos" className="py-20 bg-white">
-      <div className="max-w-5xl mx-auto px-4">
-        <h2 className="section-title">Tratamentos</h2>
-        <p className="section-subtitle">
-          Cada protocolo é planejado individualmente, respeitando a anatomia e
-          os objetivos de cada paciente.
-        </p>
-        <div className="grid gap-5 md:grid-cols-2">
-          {services.map((service) => (
-            <div key={service.title} className="card">
-              <h3 className="text-base font-semibold text-slate-900 mb-2">
-                {service.title}
-              </h3>
-              <p className="text-sm text-slate-500 leading-relaxed">
-                {service.description}
-              </p>
+    <section id="servicos" className="py-24 bg-white">
+      <div className="section-wrapper">
+        <div className="text-center mb-14">
+          <span className="section-tag">O que oferecemos</span>
+          <h2 className="section-title">Tratamentos especializados</h2>
+          <p className="section-subtitle mx-auto">
+            Cada protocolo é pensado individualmente para respeitar sua anatomia
+            e potencializar sua beleza natural.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {services.map((s) => (
+            <div key={s.title} className="card-hover relative">
+              {s.highlight && (
+                <span className="absolute top-4 right-4 text-xs font-medium bg-blush-100 text-blush-400 px-3 py-1 rounded-full">
+                  {s.highlight}
+                </span>
+              )}
+              <div className="text-3xl mb-4">{s.icon}</div>
+              <p className="text-xs uppercase tracking-widest text-brand-300 font-medium mb-1">{s.subtitle}</p>
+              <h3 className="font-playfair text-xl font-bold text-brand-500 mb-3">{s.title}</h3>
+              <p className="text-brand-400 text-sm leading-relaxed">{s.description}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="btn-primary">
+            Quero saber qual tratamento é para mim
+          </a>
         </div>
       </div>
     </section>
